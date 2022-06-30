@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface MenuHidden {
-  visibilityNav: 'none' | 'hidden';
+  visibilityNav: string;
 }
 
 export const ContainerHeader = styled.div`
@@ -17,7 +17,6 @@ export const ContainerHeader = styled.div`
 export const Menu = styled.button`
   @media (min-width: 1000px) {
   visibility: hidden;
-
   }
   visibility: none;
 `;
@@ -34,10 +33,15 @@ export const Navbar = styled.nav<MenuHidden>`
   display: block;
   position: fixed;
 
-  top: 40px;
+  top: 60px;
   left: 0;
 
+  background-color: #FFFFFF;
+  padding: 40px;
   
+  flex-direction: column;
+  height: 100vh;
+  border-radius: 0 5px 5px 0;
   }
 
   display: flex;
@@ -45,6 +49,10 @@ export const Navbar = styled.nav<MenuHidden>`
 };
 
 & li {
+  @media (max-width: 1000px) {
+    padding: 15px;
+};
+
   margin-right: 48px;
   list-style-type: none;
   font-size: var(--font-family-primary);

@@ -9,10 +9,15 @@ import { useState } from 'react';
 
 export function Header() {
   const [hidden, setHidden] = useState('hidden');
+  const [filterInput, setFilterInput] = useState(false);
 
   const handleHidden = () => {
     hidden === 'hidden' ? setHidden('none') : setHidden('hidden');
-  }
+  };
+
+  const handleFilterInput = () => (
+    !filterInput ? setFilterInput(true) : setFilterInput(false)
+  );
 
   return (
     <ContainerHeader>
@@ -35,9 +40,16 @@ export function Header() {
       </Navbar>
   
       <ContentIcons>
-        <Filter>
-          <Link to={''} />
-          <img src={ filterIcon } alt="filter" />
+        <Filter available={ filterInput }>
+
+          { filterInput && <input type="text" /> }
+          
+          <button
+            type="button"
+            onClick={ handleFilterInput }
+          >
+            <img src={ filterIcon } alt="filter" />
+          </button>
         </Filter>
   
         <Profile>

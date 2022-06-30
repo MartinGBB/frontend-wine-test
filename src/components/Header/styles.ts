@@ -4,6 +4,10 @@ interface MenuHidden {
   visibilityNav: string;
 }
 
+interface FilterAvailable {
+  available: boolean;
+}
+
 export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
@@ -23,7 +27,7 @@ export const Menu = styled.button`
   @media (min-width: 1000px) {
   visibility: hidden;
   }
-  visibility: none;
+
   background-color: transparent;
   border: transparent;
 `;
@@ -74,18 +78,28 @@ export const ContentIcons = styled.div`
   };
 `;
 
-export const Filter = styled.div`
+export const Filter = styled.div<FilterAvailable>`
   @media (max-width: 1000px) {
     margin-left: 0;
   }
   display: flex;
   align-items: center;
+
+  & img {
+    width: ${(({ available }) => available ? '30px' : '')};
+  }
+
+  & button {
+    background-color: transparent;
+    border: transparent;
+  }
 `;
 
 export const Profile = styled.div`
   @media (max-width: 1000px) {
     visibility: hidden;
     width: 0;
+    margin: 0;
   }
   display: flex;
   align-items: center;

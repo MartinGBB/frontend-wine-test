@@ -108,12 +108,13 @@ export const Filter = styled.div<FilterAvailable>`
   }
   display: flex;
   align-items: center;
-
+  
   & img {
     width: ${(({ available }) => available ? '30px' : '')};
   }
-
+  
   & button {
+    cursor: pointer;
     background-color: transparent;
     border: transparent;
   }
@@ -139,6 +140,7 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   margin-left: 2.625rem;
+  cursor: pointer;
 `;
 
 export const Cart = styled.div`
@@ -149,4 +151,5 @@ export const Cart = styled.div`
   margin-left: 2.8125rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;

@@ -58,12 +58,27 @@ export const Navbar = styled.nav<MenuHidden>`
     @media (max-width: 1000px) {
       padding: 15px;
     };
-
+    
     margin-right: 48px;
     list-style-type: none;
-    font-size: var(--font-family-primary);
-    font-size: 18px;
-    color: var(--color-font-header);
+    
+    & a {
+      font-size: var(--font-family-primary);
+      font-size: 18px;
+      color: var(--color-font-header);
+      text-decoration: dashed;
+    };
+
+    & a:hover, a:focus {
+      @media (max-width: 1000px) {
+        border-bottom: 1px solid var(--color-font-select-header);
+        padding-bottom: 2px;
+      };
+
+      color: var(--color-font-select-header);
+      padding-bottom: 27px;
+      border-bottom: 2px solid var(--color-font-select-header);
+    };
   };
 `;
 

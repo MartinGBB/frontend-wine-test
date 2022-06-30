@@ -93,6 +93,18 @@ export const Filter = styled.div<FilterAvailable>`
     background-color: transparent;
     border: transparent;
   }
+
+  & input {
+    border: 0.5px solid;
+    border-radius: 5px;
+    padding: 4px;
+    width: 6rem;
+  }
+
+  & input:focus {
+    border: 1.5px solid;
+    outline: 6px;
+  }
 `;
 
 export const Profile = styled.div`

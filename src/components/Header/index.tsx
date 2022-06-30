@@ -1,8 +1,9 @@
-import { ContainerHeader, Navbar, ContentIcons, Filter, Cart, Profile, Menu } from './styles';
+import { ContainerHeader, Navbar, ContentIcons, Filter, Cart, Profile, Menu, LogoWine } from './styles';
 import logo from '../../images/logo.png';
 import profileImg from '../../images/profile.png';
 import bag from '../../images/bag.png';
 import filterIcon from '../../images/filter.png';
+import menu from '../../images/menu.png';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -19,10 +20,10 @@ export function Header() {
         type="button"
         onClick={ handleHidden }
       >
-        <img src="" alt="" />
+        <img src={ menu } alt="menu" />
       </Menu>
 
-      <img src={ logo } alt="wine" />
+      <LogoWine src={ logo } alt="wine" />
       <Navbar visibilityNav={ hidden }>
         <ul>
           <li>Clube</li>

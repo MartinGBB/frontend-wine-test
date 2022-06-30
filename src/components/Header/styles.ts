@@ -3,14 +3,20 @@ import styled from 'styled-components';
 export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background: blue;
   height: 5.5rem;
 `;
 
-export const Title = styled.h1`
+export const Navbar = styled.nav`
+& ul {
+  display: flex;
+};
 
-font-size: 1.5em;
-text-align: center;
-color: palevioletred;
+& li {
+    margin-left: 24px;
+    list-style-type: none;
+    font-size: var(--font-family-primary);
+    font-size: 18px;
+  };
 `;

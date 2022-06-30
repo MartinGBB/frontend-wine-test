@@ -46,16 +46,19 @@ export function Header() {
       </Navbar>
   
       <ContentIcons>
-        <Filter available={ filterInputAvailable }>
+        <Filter>
 
           { 
             filterInputAvailable
             && 
-            <input
-              type="text"
-              value={ inputFilter }
-              onChange={ ({ target }) => setInputFilter(target.value) }
-            />
+            <div>
+              <input
+                type="text"
+                value={ inputFilter }
+                placeholder="Busque seu produto aqui"
+                onChange={ ({ target }) => setInputFilter(target.value) }
+              />
+            </div>
           }
           
           <button

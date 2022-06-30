@@ -4,10 +4,6 @@ interface MenuHidden {
   visibilityNav: string;
 }
 
-interface FilterAvailable {
-  available: boolean;
-}
-
 export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
@@ -102,16 +98,12 @@ export const ContentIcons = styled.div`
   };
 `;
 
-export const Filter = styled.div<FilterAvailable>`
+export const Filter = styled.div`
   @media (max-width: 960px) {
     margin-left: 0;
   }
   display: flex;
   align-items: center;
-  
-  & img {
-    width: ${(({ available }) => available ? '30px' : '')};
-  }
   
   & button {
     cursor: pointer;
@@ -119,11 +111,26 @@ export const Filter = styled.div<FilterAvailable>`
     border: transparent;
   }
 
+  & div {
+    position: fixed;
+    top: 89px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    background-color: white;
+    justify-content: space-evenly;
+  }
+
   & input {
+    align-items: center;
     border: 0.5px solid;
     border-radius: 5px;
-    padding: 4px;
-    width: 6rem;
+    padding: 8px;
+    margin: auto;
+    width: 84.2vw;
+    display: flex;
+    justify-content: center;
   }
 
   & input:focus {

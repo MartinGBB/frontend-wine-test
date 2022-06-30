@@ -5,9 +5,15 @@ import bag from '../../images/bag.png';
 import filterIcon from '../../images/filter.png';
 import menu from '../../images/menu.png';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { MyContext } from '../Hooks/Context';
 
 export function Header() {
+  const {
+    inputFilter,
+    setinputFilter,
+  } = useContext(MyContext);
+
   const [hidden, setHidden] = useState('hidden');
   const [filterInputAvailable, setFilterInputAvailable] = useState(false);
 

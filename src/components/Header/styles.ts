@@ -24,6 +24,8 @@ export const Menu = styled.button`
   visibility: hidden;
   }
   visibility: none;
+  background-color: transparent;
+  border: transparent;
 `;
 
 export const Navbar = styled.nav<MenuHidden>`

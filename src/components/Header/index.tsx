@@ -31,11 +31,11 @@ export function Header() {
       <LogoWine src={ logo } alt="wine" />
       <Navbar visibilityNav={ hidden }>
         <ul>
-          <li>Clube</li>
-          <li>Loja</li>
-          <li>Produtores</li>
-          <li>Ofertas</li>
-          <li>Eventos</li>
+          <li><Link to={''}>Clube</Link></li>
+          <li><Link to={'/'}>Loja</Link></li>
+          <li><Link to={''}>Produtores</Link></li>
+          <li><Link to={''}>Ofertas</Link></li>
+          <li><Link to={''}>Eventos</Link></li>
         </ul>
       </Navbar>
   

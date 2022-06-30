@@ -4,7 +4,7 @@ export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background: blue;
+  background: var(--color-card);
   height: 5.5rem;
 `;
 

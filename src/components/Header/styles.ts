@@ -15,30 +15,39 @@ export const ContainerHeader = styled.div`
   background: var(--color-card);
   height: 5.5rem;
   border-bottom: 0.5px solid #CCCCCC;
+
+  @media (max-width: 960px) {
+    justify-content: space-between;
+  }
 `;
 
 export const LogoWine = styled.img`
-  @media (max-width: 1000px) {
+  @media (max-width: 960px) {
       width: 5rem;
+      margin: 0 1px 0 60px;
+
   }
 `;
 
 export const Menu = styled.button`
-  @media (min-width: 1000px) {
-  visibility: hidden;
+  @media (min-width: 960px) {
+    visibility: hidden;
   }
 
   background-color: transparent;
   border: transparent;
+  position: fixed;
+  left: 15px;
+  top: 35px;
 `;
 
 export const Navbar = styled.nav<MenuHidden>`
-  @media (max-width: 1000px) {
+  @media (max-width: 960px) {
     visibility: ${(({ visibilityNav }) => visibilityNav)};
   };
 
   & ul {
-    @media (max-width: 1000px) {
+    @media (max-width: 960px) {
       display: block;
       position: fixed;
       padding: 0;
@@ -55,7 +64,7 @@ export const Navbar = styled.nav<MenuHidden>`
   };
     
   & li {
-    @media (max-width: 1000px) {
+    @media (max-width: 960px) {
       padding: 15px;
     };
     
@@ -70,7 +79,7 @@ export const Navbar = styled.nav<MenuHidden>`
     };
 
     & a:hover, a:focus {
-      @media (max-width: 1000px) {
+      @media (max-width: 960px) {
         border-bottom: 1px solid var(--color-font-select-header);
         padding-bottom: 2px;
       };
@@ -87,14 +96,14 @@ export const ContentIcons = styled.div`
   align-items: center;
 
   & img {
-    @media (max-width: 1000px) {
+    @media (max-width: 960px) {
       width: 2.5rem;
     };
   };
 `;
 
 export const Filter = styled.div<FilterAvailable>`
-  @media (max-width: 1000px) {
+  @media (max-width: 960px) {
     margin-left: 0;
   }
   display: flex;
@@ -123,20 +132,20 @@ export const Filter = styled.div<FilterAvailable>`
 `;
 
 export const Profile = styled.div`
-  @media (max-width: 1000px) {
-    visibility: hidden;
-    width: 0;
+  @media (max-width: 960px) {
     margin: 0;
-  }
+  };
+
   display: flex;
   align-items: center;
   margin-left: 2.625rem;
 `;
 
 export const Cart = styled.div`
-  @media (max-width: 1000px) {
-    margin-left: 0;
-  }
+  @media (max-width: 960px) {
+    margin: 0 20px 0 10px;
+  };
+
   margin-left: 2.8125rem;
   display: flex;
   align-items: center;

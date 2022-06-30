@@ -11,11 +11,11 @@ import { MyContext } from '../Hooks/Context';
 
 export function Header() {
   const {
-    inputFilter,
     setInputFilter,
   } = useContext(MyContext);
 
   const [hidden, setHidden] = useState('hidden');
+  const [inputValue, setInputValue] = useState('');
   const [filterInputAvailable, setFilterInputAvailable] = useState(false);
 
   const handleHidden = () => {
@@ -25,6 +25,10 @@ export function Header() {
   const handleFilterInputAvailable = () => (
     !filterInputAvailable ? setFilterInputAvailable(true) : setFilterInputAvailable(false)
   );
+
+  const handleInputFilter = () => {
+    return setInputFilter(inputValue);
+  }
 
   return (
     <ContainerHeader>
@@ -55,14 +59,14 @@ export function Header() {
             <div>
               <input
                 type="text"
-                value={ inputFilter }
+                value={ inputValue }
                 placeholder="Busque seu produto aqui"
-                onChange={ ({ target }) => setInputFilter(target.value) }
+                onChange={ ({ target: {value} }) => setInputValue(value) }
               />
               <button
                 type="button"
-                // onClick={  }
-              >
+                onClick={ () => handleInputFilter() }
+                >
                 <img className="search" src={ searchIcon } alt="buscar" />
               </button>
             </div>

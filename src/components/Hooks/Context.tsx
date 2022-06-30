@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 interface ContextState {
-  inputFilter: string;
+  inputFilter: string | undefined;
   setInputFilter: (value: string) => void;
 }
 

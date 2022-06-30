@@ -1,15 +1,29 @@
-import { ContainerHeader, Navbar, ContentIcons, Filter, Cart, Profile } from './styles';
+import { ContainerHeader, Navbar, ContentIcons, Filter, Cart, Profile, Menu } from './styles';
 import logo from '../../images/logo.png';
 import profileImg from '../../images/profile.png';
 import bag from '../../images/bag.png';
 import filterIcon from '../../images/filter.png';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export function Header() {
+  const [hidden, setHidden] = useState('hidden');
+
+  const handleHidden = () => {
+    hidden === 'hidden' ? setHidden('none') : setHidden('hidden');
+  }
+
   return (
     <ContainerHeader>
+      <Menu
+        type="button"
+        onClick={ handleHidden }
+      >
+        <img src="" alt="" />
+      </Menu>
+
       <img src={ logo } alt="wine" />
-      <Navbar>
+      <Navbar visibilityNav={ hidden }>
         <ul>
           <li>Clube</li>
           <li>Loja</li>

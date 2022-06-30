@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface MenuHidden {
+  visibilityNav: 'none' | 'hidden';
+}
+
 export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
@@ -9,8 +13,33 @@ export const ContainerHeader = styled.div`
   border-bottom: 0.5px solid #CCCCCC;
 `;
 
-export const Navbar = styled.nav`
+
+export const Menu = styled.button`
+  @media (min-width: 1000px) {
+  visibility: hidden;
+
+  }
+  visibility: none;
+`;
+
+export const Navbar = styled.nav<MenuHidden>`
+
+@media (max-width: 1000px) {
+  visibility: ${(({ visibilityNav }) => visibilityNav)};
+
+}
+
 & ul {
+  @media (max-width: 1000px) {
+  display: block;
+  position: fixed;
+
+  top: 40px;
+  left: 0;
+
+  
+  }
+
   display: flex;
   padding: 0;
 };

@@ -1,15 +1,9 @@
-import { Cards } from "./components/Cards"
-import { Header } from "./components/Header"
-import { Slidebar } from "./components/Slidebar"
+import { Cataloge } from "./pages/Cataloge";
 
-function App() {
+export function App() {
   return (
     <div>
-      <Header />
-      <Slidebar />
-      <Cards />
+      <Cataloge />
     </div>
   )
 }
-
-export default App

@@ -9,14 +9,14 @@ import { useState } from 'react';
 
 export function Header() {
   const [hidden, setHidden] = useState('hidden');
-  const [filterInput, setFilterInput] = useState(false);
+  const [filterInputAvailable, setFilterInputAvailable] = useState(false);
 
   const handleHidden = () => {
     hidden === 'hidden' ? setHidden('none') : setHidden('hidden');
   };
 
-  const handleFilterInput = () => (
-    !filterInput ? setFilterInput(true) : setFilterInput(false)
+  const handleFilterInputAvailable = () => (
+    !filterInputAvailable ? setFilterInputAvailable(true) : setFilterInputAvailable(false)
   );
 
   return (
@@ -40,13 +40,13 @@ export function Header() {
       </Navbar>
   
       <ContentIcons>
-        <Filter available={ filterInput }>
+        <Filter available={ filterInputAvailable }>
 
-          { filterInput && <input type="text" /> }
+          { filterInputAvailable && <input type="text" /> }
           
           <button
             type="button"
-            onClick={ handleFilterInput }
+            onClick={ handleFilterInputAvailable }
           >
             <img src={ filterIcon } alt="filter" />
           </button>

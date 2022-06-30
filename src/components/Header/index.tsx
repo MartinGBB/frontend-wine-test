@@ -1,9 +1,9 @@
-import { Title } from './styles';
+import { ContainerHeader, Title } from './styles';
 
 export function Header() {
   return (
-    <div>
+    <ContainerHeader>
       <Title>Hello world</Title>
-    </div>
+    </ContainerHeader>
   )
 }

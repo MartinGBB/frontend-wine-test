@@ -1,7 +1,13 @@
+import { Cards } from "./components/Cards"
+import { Header } from "./components/Header"
+import { Slidebar } from "./components/Slidebar"
+
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <Header />
+      <Slidebar />
+      <Cards />
     </div>
   )
 }

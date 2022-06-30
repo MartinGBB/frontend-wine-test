@@ -1,0 +1,23 @@
+@import url('https://db.onlinewebfonts.com/c/c36b46cb31a8b2f9c6054b4dfa11e03f?family=Neo+Sans+Std');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Saira&display=swap');
+
+:root {
+  --font-family-primary: 'Neo Sans Std';
+  --font-family-secondary: 'Lato', sans-serif;
+  --font-family-card-primary: 'Saira', sans-serif;
+
+  --main-color: #DEDEDE;
+  --color-button: #7EBC43;
+  --color-card: #FFFFFF;
+
+  --color-font-header: #555555;
+  --color-font-slidebar: #1D1D1B;
+  --color-font-price-primary: #B6116E;
+  --color-font-price-secoundary: #888888;
+
+  --color-font-select-header: #D14B8F;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}

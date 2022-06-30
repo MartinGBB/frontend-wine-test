@@ -63,7 +63,7 @@ export function Header() {
                 type="button"
                 // onClick={  }
               >
-                <img src={ searchIcon } alt="buscar" />
+                <img className="search" src={ searchIcon } alt="buscar" />
               </button>
             </div>
           }

@@ -119,23 +119,29 @@ export const Filter = styled.div`
     height: 50px;
     display: flex;
     background-color: white;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   & input {
-    align-items: center;
     border: 0.5px solid;
     border-radius: 5px;
     padding: 8px;
-    margin: auto;
-    width: 84.2vw;
-    display: flex;
-    justify-content: center;
+    margin: 8px 8px;
+    width: 80vw;
   }
 
   & input:focus {
     border: 1.5px solid;
     outline: 6px;
+  }
+
+  & .search {
+    width: auto;
+  }
+
+  & button:active {
+    position: relative;
+    top: 0.5px;
   }
 `;
 

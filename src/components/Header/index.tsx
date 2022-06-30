@@ -11,7 +11,7 @@ import { MyContext } from '../Hooks/Context';
 export function Header() {
   const {
     inputFilter,
-    setinputFilter,
+    setInputFilter,
   } = useContext(MyContext);
 
   const [hidden, setHidden] = useState('hidden');
@@ -30,7 +30,7 @@ export function Header() {
       <Menu
         type="button"
         onClick={ handleHidden }
-      >
+        >
         <img src={ menu } alt="menu" />
       </Menu>
 
@@ -48,7 +48,15 @@ export function Header() {
       <ContentIcons>
         <Filter available={ filterInputAvailable }>
 
-          { filterInputAvailable && <input type="text" /> }
+          { 
+            filterInputAvailable
+            && 
+            <input
+              type="text"
+              value={ inputFilter }
+              onChange={ ({ target }) => setInputFilter(target.value) }
+            />
+          }
           
           <button
             type="button"

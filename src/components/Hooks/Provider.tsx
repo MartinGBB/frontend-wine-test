@@ -6,11 +6,11 @@ interface ChildrenContext {
 }
 
 const Provider = ({ children }: ChildrenContext) => {
-  const [inputFilter, setinputFilter] = useState("");
+  const [inputFilter, setInputFilter] = useState("");
 
   const contextValue = {
     inputFilter,
-    setinputFilter,
+    setInputFilter,
   };
 
   return (

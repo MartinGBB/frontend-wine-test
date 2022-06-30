@@ -1,9 +1,10 @@
-import { Cataloge } from "./pages/Cataloge";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./components/Router";
 
 export function App() {
   return (
-    <div>
-      <Cataloge />
-    </div>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }

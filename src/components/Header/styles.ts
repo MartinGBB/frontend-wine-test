@@ -123,7 +123,7 @@ export const Filter = styled.div`
   }
 
   & input {
-    border: 0.5px solid;
+    border: 0.5px solid var(--color-font-header);;
     border-radius: 5px;
     padding: 8px;
     margin: 8px 8px;

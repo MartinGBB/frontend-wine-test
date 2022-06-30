@@ -6,18 +6,21 @@ export const ContainerHeader = styled.div`
   justify-content: space-evenly;
   background: var(--color-card);
   height: 5.5rem;
+  border-bottom: 0.5px solid #CCCCCC;
 `;
 
 export const Navbar = styled.nav`
 & ul {
   display: flex;
+  padding: 0;
 };
 
 & li {
-  margin-left: 24px;
+  margin-right: 48px;
   list-style-type: none;
   font-size: var(--font-family-primary);
   font-size: 18px;
+  color: var(--color-font-header);
   };
 `;
 

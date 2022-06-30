@@ -76,7 +76,7 @@ export const Navbar = styled.nav<MenuHidden>`
       };
 
       color: var(--color-font-select-header);
-      padding-bottom: 27px;
+      padding-bottom: 28px;
       border-bottom: 2px solid var(--color-font-select-header);
     };
   };

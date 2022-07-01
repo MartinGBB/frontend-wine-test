@@ -14,6 +14,23 @@ export const ContainerCards = styled.div`
 `;
 
 export const ContainerProducts = styled.div`
+  width: 256px;
+  height: 333px;
+`;
+
+export const Card = styled.div`
+
+`;
+
+export const Product = styled.div`
+
+`;
+
+export const Description = styled.div`
+
+`;
+
+export const ContentImg = styled.div`
 
 `;
 

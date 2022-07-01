@@ -5,17 +5,38 @@ export const ContainerSlidebar = styled.div`
     visibility: hidden;
     width: 0;
     margin: 0;
-  }
+  };
 
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 28rem;
+  width: 20rem;
+
+  & h1 {
+    font-family: var(--font-family-primary);
+    font-size: 20px;
+    color: #262626;
+  };
+
+  & h2 {
+    font-family: var(--font-family-secondary);
+    font-size: 18px;
+    color: #333333;
+  };
 `;
 
 export const ListPriece = styled.ul`
-  @media (max-width: 800px) {
+  padding: 0;
 
-  }
-
+  & li {
+    color: var(--color-font-slidebar);
+    list-style-type: none;
+    height: 2.625rem;
+  };
+  
+  & input {
+    margin: 0;
+    margin-right: 0.81rem;
+    width: 0.99rem;
+  };
 `;

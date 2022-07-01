@@ -25,7 +25,7 @@ export const ContainerSlidebar = styled.div`
   };
 `;
 
-export const ListPriece = styled.ul`
+export const ListPriece = styled.div`
   padding: 0;
 
   & li {

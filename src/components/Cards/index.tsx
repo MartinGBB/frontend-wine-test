@@ -23,7 +23,7 @@ export function Cards() {
             <Description>
               <h1>Bacalhôa Meia Pipa Private Selection Castelão Syrah 2014</h1>
 
-              <div>
+              <div className="discount">
                 <span>R$ 37,40</span>
                 <span>60% OFF</span>
               </div>

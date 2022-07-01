@@ -129,7 +129,7 @@ export const ContentImg = styled.div`
   
   
   & img:first-child {
-    @media (max-width: 570px) {
+  @media (max-width: 570px) {
     width: 170px;
   };
 
@@ -137,8 +137,8 @@ export const ContentImg = styled.div`
     width: 150px;
     height: 190px;
   };
-  width: 198.57px;
-  height: 178.13px;
+    width: 198.57px;
+    height: 178.13px;
 };
 
 & img:last-child {

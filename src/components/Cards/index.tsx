@@ -3,7 +3,7 @@ import { ContainerCards } from './styles';
 export function Cards() {
   return (
     <ContainerCards>
-      <h1>Cards</h1>
+      <p>49 produtos encontrados</p>
     </ContainerCards>
   )
 }

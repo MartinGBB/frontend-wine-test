@@ -32,7 +32,7 @@ export const Menu = styled.button`
 
   background-color: transparent;
   border: transparent;
-  position: fixed;
+  position: absolute;
   left: 15px;
   top: 35px;
 `;

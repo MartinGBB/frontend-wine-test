@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const ContainerCards = styled.div`
-  @media (max-width: 1240px) {
-    justify-content: center;
-  };
   display: flex;
   flex-wrap: wrap;
   width: auto;
   height: auto;
+  justify-content: center;
 
   & p {
     font-family: var(--font-family-secondary);

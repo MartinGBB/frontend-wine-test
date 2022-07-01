@@ -25,6 +25,7 @@ export const Card = styled.div`
 export const Product = styled.div`
   background-color: var(--color-card);
   padding: 1rem;
+  border: 0.5px solid var(--color-card);
 `;
 
 export const Description = styled.div`

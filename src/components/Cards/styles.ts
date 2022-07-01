@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const ContainerCards = styled.div`
+  @media (max-width: 1240px) {
+    justify-content: center;
+  };
   display: flex;
-  flex-direction: column;
-  width: 100vw;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
 
   & p {
     font-family: var(--font-family-secondary);
@@ -12,15 +16,27 @@ export const ContainerCards = styled.div`
     margin-top: 0.711rem;
     margin-bottom: 2rem;
   }
-`;
+  `;
 
 export const ContainerProducts = styled.div`
-  width: 256px;
-  height: 333px;
+  @media (max-width: 570px) {
+    width: 14.5rem;
+  };
+
+  @media (max-width: 500px) {
+    width: 12.6rem;
+  };
+
+  width: 17.06rem;
+  height: auto;
+  margin-bottom: 0px;
 `;
 
 export const Card = styled.div`
-
+  @media (max-width: 500px) {
+    margin: 0.6rem;
+  };
+  margin: 1rem;
   & button {
     display: flex;
     justify-content: center;
@@ -110,13 +126,32 @@ export const ContentImg = styled.div`
   margin: auto;
   justify-content: center;
   position: relative;
-
+  
+  
   & img:first-child {
-    width: 198.57px;
-    height: 178.13px;
+    @media (max-width: 570px) {
+    width: 170px;
   };
 
-  & img:last-child {
+  @media (max-width: 500px) {
+    width: 150px;
+    height: 190px;
+  };
+  width: 198.57px;
+  height: 178.13px;
+};
+
+& img:last-child {
+  @media (max-width: 570px) {
+    bottom: 4.43px;
+    right: 135px;
+  };
+  @media (max-width: 500px) {
+    bottom: 4.43px;
+    right: 113px;
+  };
+  
+    z-index: 2;
     position: absolute;
     bottom: 8.43px;
     right: 1px;

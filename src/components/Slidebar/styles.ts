@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerSlidebar = styled.div`
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     visibility: hidden;
     width: 0;
     margin: 0;

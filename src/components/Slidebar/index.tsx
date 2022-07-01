@@ -9,7 +9,7 @@ export function Slidebar() {
   // https://www.wake-up-neo.com/pt/reactjs/entrada-de-typescript-onchange-event.target.value/829447927/
   
   const handleChecked = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
-    setFilterPrice(value);
+    return setFilterPrice(value);
   };
 
   return (
@@ -34,7 +34,7 @@ export function Slidebar() {
             type="radio"
             id="1"
             name="priceFilter"
-            value="40"
+            value="<40"
             checked={ filterPrice === "<40" ? true : false }
             onChange={ handleChecked }
           />
@@ -77,12 +77,12 @@ export function Slidebar() {
           R$200 A R$500
         </label>
 
-        <label htmlFor="">
+        <label htmlFor="5">
           <input
             type="radio"
             id="5"
             name="priceFilter"
-            value="500"
+            value=">500"
             checked={ filterPrice === ">500" ? true : false }
             onChange={ handleChecked }
             />

@@ -27,8 +27,9 @@ export const ContainerSlidebar = styled.div`
 
 export const ListPriece = styled.div`
   padding: 0;
-
-  & li {
+  
+  & label {
+    display: block;
     color: var(--color-font-slidebar);
     list-style-type: none;
     height: 2.625rem;

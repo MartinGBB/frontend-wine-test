@@ -11,9 +11,7 @@ import {
 
 export function Cards() {
   return (
-    <ContainerCards>
-      {/* <p>49 produtos encontrados</p> */}
-  
+    <ContainerCards>  
       <ContainerProducts>
         <Card>
           <Product>

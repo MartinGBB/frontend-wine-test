@@ -6,15 +6,7 @@ export const ContainerCards = styled.div`
   width: auto;
   height: auto;
   justify-content: center;
-
-  & p {
-    font-family: var(--font-family-secondary);
-    font-size: 1.125rem;
-    color: #262626;
-    margin-top: 0.711rem;
-    margin-bottom: 2rem;
-  }
-  `;
+`;
 
 export const ContainerProducts = styled.div`
   @media (max-width: 570px) {

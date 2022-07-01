@@ -7,10 +7,13 @@ interface ChildrenContext {
 
 const Provider = ({ children }: ChildrenContext) => {
   const [inputFilter, setInputFilter] = useState("");
+  const [filterPrice, setFilterPrice] = useState('');
 
   const contextValue = {
     inputFilter,
     setInputFilter,
+    filterPrice,
+    setFilterPrice
   };
 
   return (

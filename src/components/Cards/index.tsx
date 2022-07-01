@@ -28,12 +28,11 @@ export function Cards() {
                 <span>60% OFF</span>
               </div>
 
-              <div>
+              <div className="partner">
                 <span>Sócio wine</span>
                 <span>R$ 30,00</span>
+                <h2>Não sócio R$ 37,40</h2>
               </div>
-              
-              <h2>Não sócio R$ 37,40</h2>
             </Description>
 
           </Product>

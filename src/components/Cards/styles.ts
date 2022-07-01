@@ -30,11 +30,12 @@ export const Description = styled.div`
   margin: auto;
   justify-content: center;
   text-align: center;
+
   & h1 {
     font-size: 1rem;
     font-family: var(--font-family-secondary);
     color: var(--color-font-slidebar);
-  }
+  };
 
   & .discount {
     margin: auto;
@@ -47,7 +48,7 @@ export const Description = styled.div`
     & span:first-child {
       text-decoration: line-through;
       color: #888888;
-    }
+    };
 
     & span:last-child {
       padding: 0.5px 4px;
@@ -55,8 +56,11 @@ export const Description = styled.div`
       border-radius: 1.95px;
       margin-left: 5.40px;
       color: #FFFFFF;
-    }
-  }
+    };
+  };
+
+  & .partner
+  
 `;
 
 export const ContentImg = styled.div`

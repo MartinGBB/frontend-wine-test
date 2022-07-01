@@ -16,10 +16,24 @@ export const ContainerCards = styled.div`
 export const ContainerProducts = styled.div`
   width: 256px;
   height: 333px;
-  `;
+`;
 
 export const Card = styled.div`
 
+  & button {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.731rem 1.461rem;
+    background-color: var(--color-button);
+    border: none;
+    color: var(--color-card);
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: var(--color-font-price-secoundary);
+  };
 `;
 
 export const Product = styled.div`

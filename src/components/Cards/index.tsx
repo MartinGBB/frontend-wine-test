@@ -1,3 +1,4 @@
+import blackLogo from "../../images/selo.png";
 import { 
   ContainerCards,
   ContainerProducts,
@@ -18,7 +19,7 @@ export function Cards() {
           <Product>
             <ContentImg>
               <img src="" alt="" />
-              <img src="" alt="" />
+              <img src={ blackLogo } alt="" />
             </ContentImg>
 
             <Description>

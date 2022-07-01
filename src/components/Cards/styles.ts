@@ -10,6 +10,7 @@ export const ContainerCards = styled.div`
     font-size: 1.125rem;
     color: #262626;
     margin-top: 0.711rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -105,7 +106,24 @@ export const Currency = styled.span`
 `;
 
 export const ContentImg = styled.div`
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  position: relative;
 
+  & img:first-child {
+    width: 198.57px;
+    height: 178.13px;
+  };
+
+  & img:last-child {
+    position: absolute;
+    bottom: 8.43px;
+    right: 1px;
+    width: 38.94px;
+    height: 38.94px;
+    border-radius: 50%;
+  };
 `;
 
 export const ButtonsPages = styled.div`

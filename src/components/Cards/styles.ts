@@ -69,7 +69,12 @@ export const Description = styled.div`
       color: var(--color-font-slidebar);
       
     };
-  }
+
+    & h2 {
+      color: #888888;
+      font-size: 12px;
+    };
+  };
 `;
 
 export const Currency = styled.span`

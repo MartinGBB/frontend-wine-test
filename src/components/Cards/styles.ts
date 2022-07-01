@@ -54,13 +54,33 @@ export const Description = styled.div`
       padding: 0.5px 4px;
       background-color: #F79552;
       border-radius: 1.95px;
-      margin-left: 5.40px;
+      margin-left: 0.337rem;
       color: #FFFFFF;
     };
   };
 
-  & .partner
-  
+  & .partner {
+    margin: auto;
+    font-family: var(--font-family-secondary);
+    font-size: 0.687rem;
+    
+    & .title {
+      font-weight: 700;
+      color: var(--color-font-slidebar);
+      
+    };
+  }
+`;
+
+export const Currency = styled.span`
+  color: var(--color-font-price-primary);
+  margin-left: 0.337rem;
+  font-weight: 700;
+
+& span:nth-child(2) {
+    color: var(--color-font-price-primary);
+    font-size: 1.5rem;
+  };
 `;
 
 export const ContentImg = styled.div`

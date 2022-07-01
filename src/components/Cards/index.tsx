@@ -5,6 +5,7 @@ import {
   Product,
   Description,
   ContentImg,
+  Currency,
   ButtonsPages } from './styles';
 
 export function Cards() {
@@ -29,8 +30,12 @@ export function Cards() {
               </div>
 
               <div className="partner">
-                <span>Sócio wine</span>
-                <span>R$ 30,00</span>
+                <span className="title">Sócio wine</span>
+                <Currency>
+                  <span>R$</span>
+                  <span>30</span>
+                  <span>,00</span>
+                </Currency>
                 <h2>Não sócio R$ 37,40</h2>
               </div>
             </Description>

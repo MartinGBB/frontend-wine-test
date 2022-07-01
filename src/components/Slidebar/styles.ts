@@ -12,3 +12,10 @@ export const ContainerSlidebar = styled.div`
   height: 100vh;
   width: 28rem;
 `;
+
+export const ListPriece = styled.ul`
+  @media (max-width: 800px) {
+
+  }
+
+`;

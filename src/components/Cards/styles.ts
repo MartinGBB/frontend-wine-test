@@ -49,6 +49,10 @@ export const Card = styled.div`
     font-weight: 700;
     font-family: var(--color-font-price-secoundary);
   };
+
+  & button:active {
+    padding: 0.7rem 1.461rem;
+  }
 `;
 
 export const Product = styled.div`

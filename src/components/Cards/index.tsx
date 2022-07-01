@@ -1,9 +1,9 @@
-// import {  } from './styles';
+import { ContainerCards } from './styles';
 
 export function Cards() {
   return (
-    <div>
+    <ContainerCards>
       <h1>Cards</h1>
-    </div>
+    </ContainerCards>
   )
 }

@@ -16,14 +16,15 @@ export const ContainerCards = styled.div`
 export const ContainerProducts = styled.div`
   width: 256px;
   height: 333px;
-`;
+  `;
 
 export const Card = styled.div`
 
 `;
 
 export const Product = styled.div`
-
+  background-color: var(--color-card);
+  padding: 1rem;
 `;
 
 export const Description = styled.div`
@@ -39,7 +40,7 @@ export const Description = styled.div`
 
   & .discount {
     margin: auto;
-    padding: 5px;
+    padding: 0.438rem;
     justify-content: center;
     font-weight: 700;
     font-size: 0.6875rem;
@@ -72,7 +73,7 @@ export const Description = styled.div`
 
     & h2 {
       color: #888888;
-      font-size: 12px;
+      font-size: 0.75rem;
     };
   };
 `;

@@ -1,9 +1,9 @@
-// import {  } from './styles';
+import { ContainerSlidebar } from './styles';
 
 export function Slidebar() {
   return (
-    <div>
+    <ContainerSlidebar>
       <h1>Slidebar</h1>
-    </div>
+    </ContainerSlidebar>
   )
 };

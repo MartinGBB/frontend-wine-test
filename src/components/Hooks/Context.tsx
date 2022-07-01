@@ -3,6 +3,8 @@ import { createContext } from "react";
 interface ContextState {
   inputFilter: string | undefined;
   setInputFilter: (value: string) => void;
+  filterPrice: string | undefined;
+  setFilterPrice: (value: string) => void;
 }
 
 

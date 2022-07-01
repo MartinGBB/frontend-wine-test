@@ -12,3 +12,11 @@ export const ContainerCards = styled.div`
     margin-top: 0.711rem;
   }
 `;
+
+export const ContainerProducts = styled.div`
+
+`;
+
+export const ButtonsPages = styled.div`
+
+`;

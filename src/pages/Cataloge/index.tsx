@@ -1,4 +1,4 @@
-import { Cards } from "../../components/Cards";
+import { CardList } from "../../components/CardList";
 import { Header } from "../../components/Header";
 import { Slidebar } from "../../components/Slidebar";
 import { ContainerCataloge } from "./styles";
@@ -9,7 +9,7 @@ export function Cataloge() {
       <Header />
       <ContainerCataloge>
         <Slidebar />
-        <Cards />
+        <CardList />
       </ContainerCataloge>
     </div>
   )

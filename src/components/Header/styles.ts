@@ -11,7 +11,6 @@ export const ContainerHeader = styled.div`
   background: var(--color-card);
   height: 5.5rem;
   border-bottom: 0.5px solid #CCCCCC;
-
   @media (max-width: 960px) {
     justify-content: space-between;
   }
@@ -54,6 +53,8 @@ export const Navbar = styled.nav<MenuHidden>`
       flex-direction: column;
       height: 100vh;
       border-radius: 0 5px 5px 0;
+      z-index: 3;
+
     };
 
     display: flex;

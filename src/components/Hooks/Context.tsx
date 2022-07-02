@@ -5,8 +5,24 @@ interface ContextState {
   setInputFilter: (value: string) => void;
   filterPrice: string | undefined;
   setFilterPrice: (value: string) => void;
-
-  products: [] | any;
+  products: {
+    id: number;
+    image: string;
+    name: string;
+    price: number;
+    discount: number;
+    priceMember: number;
+    priceNonMember: number;
+    type: string;
+    classification: string;
+    size: string;
+    rating: number;
+    avaliations: number;
+    country: string;
+    region: string;
+    flag: string;
+    sommelierComment: string;
+  }[];
   setProducts: (value: string) => void;
   quantityProducts: number | undefined;
   setQuantityProducts: (value: string) => void;

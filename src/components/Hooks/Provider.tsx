@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchApi } from "../../utils/fetchApi";
+import { searchPrice } from "../../utils/searchPrice";
 import { MyContext } from "./Context";
 
 interface ChildrenContext {
@@ -13,6 +14,7 @@ const Provider = ({ children }: ChildrenContext) => {
   const [products, setProducts] = useState([]);
   const [quantityProducts, setQuantityProducts] = useState('');
   const [nextPage, setNextPage] = useState('1');
+  const [dataApi, setDataApi] = useState([]);
 
   const contextValue = {
     inputFilter,
@@ -29,12 +31,24 @@ const Provider = ({ children }: ChildrenContext) => {
   };
 
   const handleFetch = async () => {
-    const data = await fetchApi(nextPage);
+    const endpoint = `https://wine-back-test.herokuapp.com/products?page=${nextPage}&limit=9`
+    const data = await fetchApi(endpoint);
+    setDataApi(data.items)
     setQuantityProducts(data.totalItems);
     setProducts(data.items);
   };
 
-  
+  const handleFilterPrice = async () => {
+    if (filterPrice === 'everybody') {
+      setProducts(dataApi)
+    }
+    const filter = searchPrice(filterPrice, dataApi)
+    setProducts(filter);
+  }
+
+  useEffect(() => {
+    handleFilterPrice()
+  }, [filterPrice])
 
   useEffect(() => {
     handleFetch()

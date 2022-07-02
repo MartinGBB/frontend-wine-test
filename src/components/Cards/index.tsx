@@ -12,11 +12,11 @@ import {
 interface ProductCard {
   image: string;
   name: string;
-  priceWithDescount: number;
+  price: string;
   discount: number;
   priceMemberInt: number;
   priceMemberPennies: number;
-  priceNonMember: number;
+  priceNonMember: string;
 };
 
 export function Cards(props: ProductCard) {
@@ -34,7 +34,7 @@ export function Cards(props: ProductCard) {
               <h1>{ props.name }</h1>
 
               <div className="discount">
-                <span>R$ { props.priceWithDescount }</span>
+                <span>R$ { props.price }</span>
                 <span>{ props.discount }% OFF</span>
               </div>
 

@@ -10,7 +10,7 @@ export const ContainerSlidebar = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 20rem;
+  width: 29rem;
 
   & h1 {
     font-family: var(--font-family-primary);

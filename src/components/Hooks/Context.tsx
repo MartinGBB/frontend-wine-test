@@ -5,6 +5,13 @@ interface ContextState {
   setInputFilter: (value: string) => void;
   filterPrice: string | undefined;
   setFilterPrice: (value: string) => void;
+
+  products: [] | any;
+  setProducts: (value: string) => void;
+  quantityProducts: number | undefined;
+  setQuantityProducts: (value: string) => void;
+  nextPage: string | undefined;
+  setNextPage: (value: string) => void;
 }
 
 

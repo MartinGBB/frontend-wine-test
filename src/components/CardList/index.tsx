@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchApi } from "../../utils/fetchApi";
 import { formatPrice } from "../../utils/formatDataApi";
 import { splitPrice } from "../../utils/splitPrice";
 import { Cards } from "../Cards";
+import { MyContext } from "../Hooks/Context";
 import { Container, ContainerCardList, ButtonsPages } from "./styles";
 
 interface ProductsApi {
@@ -14,13 +14,15 @@ interface ProductsApi {
   discount: number;
   priceMember: number;
   priceNonMember: number;
-}
+} [];
 
 export function CardList() {
-  const [products, setProducts] = useState([]);
-  const [quantityProducts, setQuantityProducts] = useState('');
-  const [nextPage, setNextPage] = useState('1');
-  
+  const {
+    products,
+    quantityProducts,
+    setNextPage,
+  } = useContext(MyContext);
+
   const navigation = useNavigate();
   
   const handleNextPage = ({ target: { value } }: any) => {
@@ -28,16 +30,6 @@ export function CardList() {
     window.scrollTo({top: 0, behavior: 'smooth'});
     navigation(`/cataloge/page-${value}`);
   }
-  
-  const handleFetch = async () => {
-    const data = await fetchApi(nextPage);
-    setQuantityProducts(data.totalItems);
-    setProducts(data.items);
-  };
-  
-  useEffect(() => {
-    handleFetch(); 
-}, [nextPage]);
 
   return (
     <Container>

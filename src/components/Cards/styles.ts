@@ -119,14 +119,6 @@ export const ContentImg = styled.div`
   
   
   & img:first-child {
-  /* @media (max-width: 570px) {
-    width: 170px;
-  };
-
-  @media (max-width: 500px) {
-    width: 150px;
-    height: 190px;
-  }; */
     width: 120px;
     height: 170.13px;
 };
@@ -149,8 +141,4 @@ export const ContentImg = styled.div`
     height: 38.94px;
     border-radius: 50%;
   };
-`;
-
-export const ButtonsPages = styled.div`
-
 `;

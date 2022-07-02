@@ -7,7 +7,7 @@ import {
   Description,
   ContentImg,
   Currency,
-  ButtonsPages } from './styles';
+} from './styles';
 
 interface ProductCard {
   image: string;
@@ -57,9 +57,6 @@ export function Cards(props: ProductCard) {
           </button>
         </Card>
       </ContainerProducts>
-      <ButtonsPages>
-
-      </ButtonsPages>
     </ContainerCards>
   )
 }

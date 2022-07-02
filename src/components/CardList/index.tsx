@@ -20,9 +20,10 @@ export function CardList() {
   const [products, setProducts] = useState([]);
   const [quantityProducts, setQuantityProducts] = useState('');
   const [nextPage, setNextPage] = useState('1');
-
+  
   const navigation = useNavigate();
-  const handleNextPage = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+  
+  const handleNextPage = ({ target: { value } }: any) => {
     setNextPage(value);
     window.scrollTo({top: 0, behavior: 'smooth'});
     navigation(`/cataloge/page-${value}`);
@@ -36,7 +37,7 @@ export function CardList() {
   
   useEffect(() => {
     handleFetch(); 
-}, []);
+}, [nextPage]);
 
   return (
     <Container>
@@ -70,4 +71,5 @@ export function CardList() {
     </ButtonsPages>
     </Container>
   )
-}
+};
+

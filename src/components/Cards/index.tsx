@@ -14,8 +14,8 @@ interface ProductCard {
   name: string;
   price: string;
   discount: number;
-  priceMemberInt: number;
-  priceMemberPennies: number;
+  priceMemberInt: string;
+  priceMemberPennies: string;
   priceNonMember: string;
 };
 

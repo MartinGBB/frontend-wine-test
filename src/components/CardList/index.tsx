@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchApi } from "../../utils/fetchApi";
 import { formatPrice } from "../../utils/formatDataApi";
+import { splitPrice } from "../../utils/splitPrice";
 import { Cards } from "../Cards";
 import { Container, ContainerCardList } from "./styles";
 
@@ -18,8 +19,6 @@ export function CardList() {
     handleFetch(); 
 }, []);
 
-  // const newFormatPrice = formatPrice(390.9);
-
   return (
     <Container>
       <p>{ quantityProducts } produtos encontrados</p>
@@ -33,8 +32,8 @@ export function CardList() {
               name={ product.name }
               price={ formatPrice(product.price) }
               discount={ product.discount }
-              priceMemberInt={ product.priceMember }
-              priceMemberPennies={ product.priceMember }
+              priceMemberInt={ splitPrice(product.priceMember).priceInt }
+              priceMemberPennies={ splitPrice(product.priceMember).pricePennies }
               priceNonMember={ formatPrice(product.priceNonMember) }
             />
           )

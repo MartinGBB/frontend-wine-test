@@ -4,6 +4,5 @@ export const splitPrice = (price: number) => {
     priceInt: separateString[0],
     pricePennies: separateString[1],
   };
-  console.log(newPrice)
   return newPrice;
 };

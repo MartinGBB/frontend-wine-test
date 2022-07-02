@@ -5,6 +5,16 @@ import { splitPrice } from "../../utils/splitPrice";
 import { Cards } from "../Cards";
 import { Container, ContainerCardList } from "./styles";
 
+interface ProductsApi {
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+  discount: number;
+  priceMember: number;
+  priceNonMember: number;
+}
+
 export function CardList() {
   const [products, setProducts] = useState([]);
   const [quantityProducts, setQuantityProducts] = useState('');
@@ -24,7 +34,7 @@ export function CardList() {
       <p>{ quantityProducts } produtos encontrados</p>
     <ContainerCardList>
       {
-        products.map((product) => {
+        products.map((product: ProductsApi) => {
           return (
             <Cards 
               key={ product.id }

@@ -39,13 +39,13 @@ export function Cards(props: ProductCard) {
               </div>
 
               <div className="partner">
-                <span className="title">Sócio wine</span>
+                <span className="title">SÓCIO WINE</span>
                 <Currency>
                   <span>R$</span>
                   <span>{ props.priceMemberInt }</span>
                   <span>,{ props.priceMemberPennies }</span>
                 </Currency>
-                <h2>Não sócio R$ { props.priceNonMember }</h2>
+                <h2>NÃO SÓCIO R$ { props.priceNonMember }</h2>
               </div>
             </Description>
 

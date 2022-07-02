@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerCards = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  height: auto;
-  justify-content: center;
+
 `;
 
 export const ContainerProducts = styled.div`
@@ -123,16 +119,16 @@ export const ContentImg = styled.div`
   
   
   & img:first-child {
-  @media (max-width: 570px) {
+  /* @media (max-width: 570px) {
     width: 170px;
   };
 
   @media (max-width: 500px) {
     width: 150px;
     height: 190px;
-  };
-    width: 198.57px;
-    height: 178.13px;
+  }; */
+    width: 120px;
+    height: 170.13px;
 };
 
 & img:last-child {

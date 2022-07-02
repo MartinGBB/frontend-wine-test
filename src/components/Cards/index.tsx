@@ -9,33 +9,43 @@ import {
   Currency,
   ButtonsPages } from './styles';
 
-export function Cards() {
+interface ProductCard {
+  image: string;
+  name: string;
+  priceWithDescount: number;
+  discount: number;
+  priceMemberInt: number;
+  priceMemberPennies: number;
+  priceNonMember: number;
+};
+
+export function Cards(props: ProductCard) {
   return (
-    <ContainerCards>  
+    <ContainerCards>
       <ContainerProducts>
         <Card>
           <Product>
             <ContentImg>
-              <img src="" alt="" />
+              <img src={ props.image } alt="" />
               <img src={ blackLogo } alt="" />
             </ContentImg>
 
             <Description>
-              <h1>Bacalhôa Meia Pipa Private Selection Castelão Syrah 2014</h1>
+              <h1>{ props.name }</h1>
 
               <div className="discount">
-                <span>R$ 37,40</span>
-                <span>60% OFF</span>
+                <span>R$ { props.priceWithDescount }</span>
+                <span>{ props.discount }% OFF</span>
               </div>
 
               <div className="partner">
                 <span className="title">Sócio wine</span>
                 <Currency>
                   <span>R$</span>
-                  <span>30</span>
-                  <span>,00</span>
+                  <span>{ props.priceMemberInt }</span>
+                  <span>,{ props.priceMemberPennies }</span>
                 </Currency>
-                <h2>Não sócio R$ 37,40</h2>
+                <h2>Não sócio R$ { props.priceNonMember }</h2>
               </div>
             </Description>
 

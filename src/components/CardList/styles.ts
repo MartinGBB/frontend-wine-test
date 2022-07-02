@@ -21,13 +21,13 @@ export const ButtonsPages = styled.div`
   width: auto;
   display: flex;
   justify-content: center;
-  margin-top: 26px;
-  margin-bottom: 46px;
+  margin-top: 1.25rem;
+  margin-bottom: 2.875rem;
   
   & button {
-  width: 30px;
-  height: 30px;
-  margin: 3px;
+    width: 1.875rem;
+    height: 1.875rem;
+    margin: 0.375rem;
     background-color: transparent;
     border: 1px solid var(--color-font-price-primary);
     font-family: var(--font-family-secondary);

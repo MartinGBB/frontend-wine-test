@@ -41,8 +41,12 @@ const Provider = ({ children }: ChildrenContext) => {
   };
 
   const handleFilterPrice = async () => {
+    const endpoint = `https://wine-back-test.herokuapp.com/products`;
+    const data = await fetchApi(endpoint);
+    setAllProducts(data.items)
+
     if (filterPrice === 'everybody') {
-      setProducts(allProducts)
+      handleFetch()
     };
     const filter = searchPrice(filterPrice, allProducts)
     setProducts(filter);
@@ -52,15 +56,12 @@ const Provider = ({ children }: ChildrenContext) => {
     const endpoint = `https://wine-back-test.herokuapp.com/products`;
     const data = await fetchApi(endpoint);
     setAllProducts(data.items)
-
-
-
+  
     if (inputFilter === '') {
       handleFetch()
     };
     const filter = searchName(inputFilter, allProducts)
     setProducts(filter)
-    console.log(filter, inputFilter)
   }
 
   useEffect(() => {

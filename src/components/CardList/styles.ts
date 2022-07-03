@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 3000px;
   & p {
     font-family: var(--font-family-secondary);
     font-size: 1.125rem;

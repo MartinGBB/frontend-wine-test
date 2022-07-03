@@ -98,5 +98,11 @@ export const CommentProduct = styled.div`
 `;
 
 export const AddCart = styled.div`
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20.5rem;
+  height: 3.5rem;
+  background-color: var(--color-button);
+  border-radius: 4px;
 `;

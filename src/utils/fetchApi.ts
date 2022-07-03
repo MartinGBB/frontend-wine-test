@@ -11,3 +11,13 @@ export const fetchAllProducts = async (page: string) => {
     alert(message)
   };
 };
+
+export const fetchFilterPrice = async (price: string | undefined) => {
+  try {
+    const data = await (await fetch(`${ENDPOINT}filter=${price}`)).json();
+    console.log(data)
+    return data;
+  } catch ({ message }) {
+    alert(message)
+  };
+};

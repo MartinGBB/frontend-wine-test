@@ -24,7 +24,9 @@ export function ProductDetails() {
 
           <SectionProduct>
             <span>Vinhos</span>
+            <span>{' > '}</span>
             <span>Estados Unidos</span>
+            <span>{' > '}</span>
             <span>California</span>
 
             <h1>Apothic Red 2019</h1>

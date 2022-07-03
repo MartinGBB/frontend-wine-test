@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchApi } from "../../utils/fetchApi";
+import { searchName } from "../../utils/searchName";
 import { searchPrice } from "../../utils/searchPrice";
 import { MyContext } from "./Context";
 
@@ -14,7 +15,7 @@ const Provider = ({ children }: ChildrenContext) => {
   const [products, setProducts] = useState([]);
   const [quantityProducts, setQuantityProducts] = useState('');
   const [nextPage, setNextPage] = useState('1');
-  const [dataApi, setDataApi] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
 
   const contextValue = {
     inputFilter,
@@ -33,18 +34,38 @@ const Provider = ({ children }: ChildrenContext) => {
   const handleFetch = async () => {
     const endpoint = `https://wine-back-test.herokuapp.com/products?page=${nextPage}&limit=9`
     const data = await fetchApi(endpoint);
-    setDataApi(data.items)
+    setAllProducts(data.items)
     setQuantityProducts(data.totalItems);
+
     setProducts(data.items);
   };
 
   const handleFilterPrice = async () => {
     if (filterPrice === 'everybody') {
-      setProducts(dataApi)
-    }
-    const filter = searchPrice(filterPrice, dataApi)
+      setProducts(allProducts)
+    };
+    const filter = searchPrice(filterPrice, allProducts)
     setProducts(filter);
+  };
+
+  const handleFilterInput = async () => {
+    const endpoint = `https://wine-back-test.herokuapp.com/products`;
+    const data = await fetchApi(endpoint);
+    setAllProducts(data.items)
+
+
+
+    if (inputFilter === '') {
+      handleFetch()
+    };
+    const filter = searchName(inputFilter, allProducts)
+    setProducts(filter)
+    console.log(filter, inputFilter)
   }
+
+  useEffect(() => {
+    handleFilterInput()
+  }, [inputFilter])
 
   useEffect(() => {
     handleFilterPrice()

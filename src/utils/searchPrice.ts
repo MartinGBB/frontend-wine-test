@@ -1,4 +1,4 @@
-export const searchPrice = (filterPrice: string | undefined, pricesApi: [] | undefined) => {
+export const searchPrice = (filterPrice: string | undefined, pricesApi: []) => {
   switch (filterPrice) {
     case "<40":
       return pricesApi?.filter(({ price }) => Number(price) < 40);

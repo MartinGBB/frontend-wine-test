@@ -23,12 +23,13 @@ export const Card = styled.div`
     margin: 0.6rem;
   };
   margin: 1rem;
-  & button {
+
+  & a {
+    text-decoration: none;
     display: flex;
     justify-content: center;
     margin: auto;
     margin-top: 1rem;
-    width: 100%;
     padding: 0.731rem 1.461rem;
     background-color: var(--color-button);
     border: none;

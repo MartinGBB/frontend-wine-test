@@ -52,11 +52,6 @@ export function Cards(props: ProductCard) {
             </Description>
 
           </Product>
-          <button
-            type="button"
-          >
-            ADICIONAR
-          </button>
           <Link to={`product/${props.id}`}>ADICIONAR</Link>
         </Card>
       </ContainerProducts>

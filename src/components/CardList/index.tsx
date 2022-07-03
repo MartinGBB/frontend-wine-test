@@ -21,10 +21,7 @@ export function CardList() {
   const [nextPage, setNextPage] = useState('1');
   const [quantityProducts, setQuantityProducts] = useState('');
 
-  const {
-    products,
-    setProducts
-  } = useContext(MyContext);
+  const { products, setProducts } = useContext(MyContext);
 
   const navigation = useNavigate();
   
@@ -36,7 +33,6 @@ export function CardList() {
 
     const handleFetch = async () => {
     const data = await fetchAllProducts(nextPage);
-    console.log(data)
     setQuantityProducts(data.totalItems);
     setProducts(data.items);
   };

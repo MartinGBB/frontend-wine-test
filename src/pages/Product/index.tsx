@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header";
+import { ProductDetails } from "../../components/ProductDetails";
 import { ContainerProduct } from "./styles";
 
 export function Product() {
@@ -6,7 +7,7 @@ export function Product() {
     <div>
       <Header />
       <ContainerProduct>
-        
+        <ProductDetails />
       </ContainerProduct>
     </div>
   )

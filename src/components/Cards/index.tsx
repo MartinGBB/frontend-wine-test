@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import blackLogo from "../../images/selo.png";
 import { 
   ContainerCards,
@@ -10,6 +11,7 @@ import {
 } from './styles';
 
 interface ProductCard {
+  id: number
   image: string;
   name: string;
   price: string;
@@ -26,8 +28,8 @@ export function Cards(props: ProductCard) {
         <Card>
           <Product>
             <ContentImg>
-              <img src={ props.image } alt="" />
-              <img src={ blackLogo } alt="" />
+              <img src={ props.image } alt="props.name" />
+              <img src={ blackLogo } alt="blackWine" />
             </ContentImg>
 
             <Description>
@@ -55,6 +57,7 @@ export function Cards(props: ProductCard) {
           >
             ADICIONAR
           </button>
+          <Link to={`product/${props.id}`}>ADICIONAR</Link>
         </Card>
       </ContainerProducts>
     </ContainerCards>

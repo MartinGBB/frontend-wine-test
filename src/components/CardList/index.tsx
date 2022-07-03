@@ -48,6 +48,7 @@ export function CardList() {
           return (
             <Cards 
               key={ product.id }
+              id={ product.id }
               image={ product.image }
               name={ product.name }
               price={ formatPrice(product.price) }

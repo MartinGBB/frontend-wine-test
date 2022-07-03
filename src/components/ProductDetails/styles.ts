@@ -2,7 +2,13 @@ import styled from 'styled-components';
 
 export const ContainerPage = styled.div`
   width: 100%;
-
+  
+  & a {
+    font-family: var(--font-family-primary);
+    font-size: 1.25rem;
+    color: #111111;
+    text-decoration: none;
+  }
 `;
 
 export const ContainerProduct = styled.div`

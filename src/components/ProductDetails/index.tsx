@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import {
   ContainerPage,
   ContainerProduct,
+  ContainerImage,
   ContainerDescriptionProduct,
   SectionProduct,
   Price,
@@ -15,9 +16,9 @@ export function ProductDetails() {
       <Link to={''}>Voltar</Link>
   
       <ContainerProduct>
-        <div>
+        <ContainerImage>
           <img src="" alt="" />
-        </div>
+        </ContainerImage>
 
         <ContainerDescriptionProduct>
 

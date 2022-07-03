@@ -22,6 +22,8 @@ interface ContextState {
     sommelierComment: string;
   }[];
   setProducts: (value: string) => void;
+  quantityProducts: number;
+  setQuantityProducts: (value: number) => void;
 }
 
 

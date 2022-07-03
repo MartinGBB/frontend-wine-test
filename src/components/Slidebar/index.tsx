@@ -4,7 +4,7 @@ import { MyContext } from '../Hooks/Context';
 import { ContainerSlidebar, ListPriece } from './styles';
 
 export function Slidebar() {
-  const { setProducts } = useContext(MyContext);
+  const { setProducts, setQuantityProducts } = useContext(MyContext);
 
   const [filterPrice, setFilterPrice] = useState("0-1000");
 
@@ -17,7 +17,8 @@ export function Slidebar() {
 
   const handleFetchFilter = async () => {
     const data = await fetchFilterPrice(filterPrice)
-    setProducts(data.items)
+    setQuantityProducts(data.totalItems)
+    setProducts(data.items);
   };
     
   useEffect(() => {

@@ -9,12 +9,15 @@ interface ChildrenContext {
 const Provider = ({ children }: ChildrenContext) => {
   const [inputFilter, setInputFilter] = useState("");
   const [products, setProducts] = useState([]);
+  const [quantityProducts, setQuantityProducts] = useState('');
 
   const contextValue = {
     inputFilter,
     setInputFilter,
     products,
     setProducts,
+    quantityProducts,
+    setQuantityProducts
   };
 
 

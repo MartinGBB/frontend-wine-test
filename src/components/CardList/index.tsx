@@ -19,9 +19,7 @@ interface ProductsApi {
 
 export function CardList() {
   const [nextPage, setNextPage] = useState('1');
-  const [quantityProducts, setQuantityProducts] = useState('');
-
-  const { products, setProducts } = useContext(MyContext);
+  const { products, setProducts, setQuantityProducts, quantityProducts } = useContext(MyContext);
 
   const navigation = useNavigate();
   

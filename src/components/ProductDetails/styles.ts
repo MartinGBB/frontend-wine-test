@@ -105,4 +105,5 @@ export const AddCart = styled.div`
   height: 3.5rem;
   background-color: var(--color-button);
   border-radius: 4px;
+  color: white;
 `;

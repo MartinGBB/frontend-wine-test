@@ -63,9 +63,11 @@ export function ProductDetails() {
 
           <AddCart>
             <button type="button">-</button>
-            <input type="text" value="1" />
+            <span>1</span>
             <button type="button">+</button>
-            <button type="button">Adicionar</button>
+            <div>
+              <button type="button">Adicionar</button>
+            </div>
           </AddCart>
         </ContainerDescriptionProduct>
       </ContainerProduct>

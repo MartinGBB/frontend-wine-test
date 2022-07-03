@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchAllProducts } from "../../utils/fetchApi";
 import { formatPrice } from "../../utils/formatDataApi";
 import { splitPrice } from "../../utils/splitPrice";
 import { Cards } from "../Cards";
@@ -17,10 +18,12 @@ interface ProductsApi {
 } [];
 
 export function CardList() {
+  const [nextPage, setNextPage] = useState('1');
+  const [quantityProducts, setQuantityProducts] = useState('');
+
   const {
     products,
-    quantityProducts,
-    setNextPage,
+    setProducts
   } = useContext(MyContext);
 
   const navigation = useNavigate();
@@ -30,6 +33,17 @@ export function CardList() {
     window.scrollTo({top: 0, behavior: 'smooth'});
     navigation(`/cataloge/page-${value}`);
   }
+
+    const handleFetch = async () => {
+    const data = await fetchAllProducts(nextPage);
+    console.log(data)
+    setQuantityProducts(data.totalItems);
+    setProducts(data.items);
+  };
+
+  useEffect(() => {
+    handleFetch()
+  }, [nextPage])
 
   return (
     <Container>

@@ -24,10 +24,6 @@ interface ContextState {
     sommelierComment: string;
   }[];
   setProducts: (value: string) => void;
-  quantityProducts: number | undefined;
-  setQuantityProducts: (value: string) => void;
-  nextPage: string | undefined;
-  setNextPage: (value: string) => void;
 }
 
 

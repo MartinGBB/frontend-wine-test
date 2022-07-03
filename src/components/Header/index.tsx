@@ -44,7 +44,7 @@ export function Header() {
       <Navbar visibilityNav={ hidden }>
         <ul>
           <li><Link to={''}>Clube</Link></li>
-          <li><Link to={'/'}>Loja</Link></li>
+          <li><Link to={''}>Loja</Link></li>
           <li><Link to={''}>Produtores</Link></li>
           <li><Link to={''}>Ofertas</Link></li>
           <li><Link to={''}>Eventos</Link></li>

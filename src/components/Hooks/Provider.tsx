@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { MyContext } from "./Context";
 
 interface ChildrenContext {

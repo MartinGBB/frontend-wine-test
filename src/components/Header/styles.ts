@@ -112,7 +112,7 @@ export const Filter = styled.div`
   }
 
   & div {
-    position: fixed;
+    position: absolute;
     top: 89px;
     left: 0;
     right: 0;
@@ -127,7 +127,7 @@ export const Filter = styled.div`
     border-radius: 5px;
     padding: 8px;
     margin: 8px 8px;
-    width: 80vw;
+    width: 83vw;
   }
 
   & input:focus {

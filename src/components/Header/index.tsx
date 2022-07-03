@@ -19,7 +19,6 @@ export function Header() {
   const [hidden, setHidden] = useState('hidden');
   const [inputValue, setInputValue] = useState('');
   const [filterInputAvailable, setFilterInputAvailable] = useState(false);
-  const [inputFilter, setInputFilter] = useState("");
 
   const handleHidden = () => {
     hidden === 'hidden' ? setHidden('none') : setHidden('hidden');
@@ -29,20 +28,15 @@ export function Header() {
     !filterInputAvailable ? setFilterInputAvailable(true) : setFilterInputAvailable(false)
   );
 
-  const handleInputFilter = () => {
-    setFilterInputAvailable(false)
-    return setInputFilter(inputValue);
-  }
-
   const handleFetch = async () => {
-    const data = await fetchFilterName(inputFilter);
+    const data = await fetchFilterName(inputValue);
     setQuantityProducts(data.totalItems);
     setProducts(data.items);
   };
 
   useEffect(() => {
     handleFetch()
-  }, [inputFilter])
+  }, [inputValue])
 
   return (
     <ContainerHeader>
@@ -77,12 +71,6 @@ export function Header() {
                 placeholder="Busque seu produto aqui"
                 onChange={ ({ target: {value} }) => setInputValue(value) }
               />
-              <button
-                type="button"
-                onClick={ () => handleInputFilter() }
-                >
-                <img className="search" src={ searchIcon } alt="buscar" />
-              </button>
             </div>
           }
           

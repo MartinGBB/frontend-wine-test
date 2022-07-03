@@ -1,4 +1,9 @@
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { formatPrice } from "../../utils/formatPrice";
+import { splitPrice } from "../../utils/splitPrice";
+import { MyContext } from "../Hooks/Context";
+
 import {
   ContainerPage,
   ContainerProduct,
@@ -9,17 +14,31 @@ import {
   PriceNonMember,
   CommentProduct,
   AddCart
-  } from "./styles";
+} from "./styles";
 
 export function ProductDetails() {
+  const [item, setItem] = useState([]);
+
+  const { productId } = useParams();
+  const { products } = useContext(MyContext);
+  
+  const handleFetchProduct = () => {
+    const productSelected = products.filter(({ id }) => id.toString() === productId);
+    setItem(productSelected[0]);
+  }
+    
+    useEffect(() => {
+      handleFetchProduct()
+    }, [])
+
   return (
     <ContainerPage>
       <span>{' < '}</span>
       <Link to={'/'}>Voltar</Link>
-  
+
       <ContainerProduct>
         <ContainerImage>
-          <img src="" alt="" />
+          <img src={ item.image } alt="" />
         </ContainerImage>
 
         <ContainerDescriptionProduct>
@@ -27,39 +46,37 @@ export function ProductDetails() {
           <SectionProduct>
             <span>Vinhos</span>
             <span>{' > '}</span>
-            <span>Estados Unidos</span>
+            <span>{ item.country }</span>
             <span>{' > '}</span>
-            <span>California</span>
+            <span>{ item.region }</span>
 
-            <h1>Apothic Red 2019</h1>
+            <h1>{ item.name }</h1>
 
-            <img src="" alt="" />
-            <span>Estados Unidos</span>
-            <span>Tinto</span>
-            <span>Meio Seco</span>
-            <span>750ml</span>
-            <span>Rating</span>
-            <span>(2)</span>
+            <img src='' alt="" />
+            <span>{ item.country }</span>
+            <span>{ item.type }</span>
+            <span>{ item.classification }</span>
+            <span>{ item.volume }</span>
+            <span>{ item.rating }</span>
+            <span>{ `(${item.avaliations})` }</span>
 
           </SectionProduct>
 
           <div>
             <PriceMember>
               <span>R$ </span>
-              <span>63</span>
-              <span>,67</span>
+              {/* <span>{ splitPrice(item.priceMember).priceInt }</span>
+              <span>,{ splitPrice(item.priceMember).pricePennies }</span> */}
             </PriceMember>
 
             <PriceNonMember>
-              <span>NÂO SOCIO R$ 120,95/UN</span>
+              {/* <span>NÂO SOCIO R$ { formatPrice(item.priceNonMember) }/UN</span> */}
             </PriceNonMember>
           </div>
 
           <CommentProduct>
             <h3>Comentario do Sommelier</h3>
-            <p>
-            Produzido no terroir californiano, esse tinto mescla as variedades Zinfandel, Syrah, Cabernet Sauvignon e Merlot. Apothic é um vinho inspirado nas antigas Apothecas (adegas subterrâneas), um lugar misterioso onde há mais de 800 anos os viticultores misturavam e armazenavam seus cobiçados vinhos.
-            </p>
+            <p>{ item.sommelierComment }</p>
           </CommentProduct>
 
           <AddCart>

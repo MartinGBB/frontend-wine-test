@@ -7,7 +7,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={ <Cataloge /> } />
       <Route path="/:page" element={ <Cataloge /> } />
-      <Route path="product/:product" element={ <Product /> } />
+      <Route path="product/:productId" element={ <Product /> } />
     </Routes>
   );
 }

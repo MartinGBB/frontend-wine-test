@@ -6,12 +6,16 @@ import filterIcon from '../../images/filter.png';
 import searchIcon from '../../images/search.png';
 import menu from '../../images/menu.png';
 import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../Hooks/Context';
+import { fetchFilterName } from '../../utils/fetchApi';
 
 export function Header() {
   const {
+    inputFilter,
     setInputFilter,
+    setQuantityProducts,
+    setProducts,
   } = useContext(MyContext);
 
   const [hidden, setHidden] = useState('hidden');
@@ -30,6 +34,16 @@ export function Header() {
     setFilterInputAvailable(false)
     return setInputFilter(inputValue);
   }
+
+  const handleFetch = async () => {
+    const data = await fetchFilterName(inputFilter);
+    setQuantityProducts(data.totalItems);
+    setProducts(data.items);
+  };
+
+  useEffect(() => {
+    handleFetch()
+  }, [inputFilter])
 
   return (
     <ContainerHeader>

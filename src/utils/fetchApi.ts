@@ -19,3 +19,12 @@ export const fetchFilterPrice = async (price: string | undefined) => {
     alert(message)
   };
 };
+
+export const fetchFilterName = async (name: string | undefined) => {
+  try {
+    const data = await (await fetch(`${ENDPOINT}name=${name}`)).json();
+    return data;
+  } catch ({ message }) {
+    alert(message)
+  };
+};

@@ -29,15 +29,15 @@ export function CardList() {
     navigation(`/cataloge/page-${value}`);
   }
 
-    const handleFetch = async () => {
+  const handleFetch = async () => {
     const data = await fetchAllProducts(nextPage);
     setQuantityProducts(data.totalItems);
     setProducts(data.items);
   };
 
   useEffect(() => {
-    handleFetch()
-  }, [nextPage])
+    handleFetch();
+  }, [nextPage]);
 
   return (
     <Container>

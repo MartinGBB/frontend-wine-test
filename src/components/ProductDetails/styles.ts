@@ -102,7 +102,6 @@ export const AddCart = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 20.5rem;
-  /* height: 3.5rem; */
   background-color: var(--color-button);
   border-radius: 4px;
   color: white;

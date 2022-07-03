@@ -55,7 +55,7 @@ export function ProductDetails() {
           </div>
 
           <CommentProduct>
-            <h1>Comentario do Sommelier</h1>
+            <h3>Comentario do Sommelier</h3>
             <p>
             Produzido no terroir californiano, esse tinto mescla as variedades Zinfandel, Syrah, Cabernet Sauvignon e Merlot. Apothic é um vinho inspirado nas antigas Apothecas (adegas subterrâneas), um lugar misterioso onde há mais de 800 anos os viticultores misturavam e armazenavam seus cobiçados vinhos.
             </p>

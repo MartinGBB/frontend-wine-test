@@ -83,7 +83,18 @@ export const PriceNonMember = styled.div`
 `;
 
 export const CommentProduct = styled.div`
-  
+  margin-top: 2.8rem;
+  font-family: var(--font-family-primary);
+
+  & h3 {
+    font-size: 16px;
+    color: #111111;
+  };
+
+  & p {
+    font-size: 0.875rem;
+    color: #666666;
+  }
 `;
 
 export const AddCart = styled.div`

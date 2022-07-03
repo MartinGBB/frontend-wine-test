@@ -14,7 +14,8 @@ import {
 export function ProductDetails() {
   return (
     <ContainerPage>
-      <Link to={''}>Voltar</Link>
+      <span>{' < '}</span>
+      <Link to={'/cataloge'}>Voltar</Link>
   
       <ContainerProduct>
         <ContainerImage>

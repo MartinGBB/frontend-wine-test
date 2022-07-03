@@ -12,8 +12,6 @@ import { fetchFilterName } from '../../utils/fetchApi';
 
 export function Header() {
   const {
-    inputFilter,
-    setInputFilter,
     setQuantityProducts,
     setProducts,
   } = useContext(MyContext);
@@ -21,6 +19,7 @@ export function Header() {
   const [hidden, setHidden] = useState('hidden');
   const [inputValue, setInputValue] = useState('');
   const [filterInputAvailable, setFilterInputAvailable] = useState(false);
+  const [inputFilter, setInputFilter] = useState("");
 
   const handleHidden = () => {
     hidden === 'hidden' ? setHidden('none') : setHidden('hidden');

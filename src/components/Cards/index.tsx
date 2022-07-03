@@ -7,15 +7,15 @@ import {
   Description,
   ContentImg,
   Currency,
-  ButtonsPages } from './styles';
+} from './styles';
 
 interface ProductCard {
   image: string;
   name: string;
   price: string;
   discount: number;
-  priceMemberInt: number;
-  priceMemberPennies: number;
+  priceMemberInt: string;
+  priceMemberPennies: string;
   priceNonMember: string;
 };
 
@@ -57,9 +57,6 @@ export function Cards(props: ProductCard) {
           </button>
         </Card>
       </ContainerProducts>
-      <ButtonsPages>
-
-      </ButtonsPages>
     </ContainerCards>
   )
 }

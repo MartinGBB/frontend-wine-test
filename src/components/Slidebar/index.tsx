@@ -1,9 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { fetchFilterPrice } from '../../utils/fetchApi';
 import { MyContext } from '../Hooks/Context';
 import { ContainerSlidebar, ListPriece } from './styles';
 
 export function Slidebar() {
-  const { filterPrice, setFilterPrice } = useContext(MyContext);
+  const { setProducts, setQuantityProducts } = useContext(MyContext);
+
+  const [filterPrice, setFilterPrice] = useState("0-1000");
 
   // referencia do tipo de target:
   // https://www.wake-up-neo.com/pt/reactjs/entrada-de-typescript-onchange-event.target.value/829447927/
@@ -11,6 +14,17 @@ export function Slidebar() {
   const handleChecked = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     return setFilterPrice(value);
   };
+
+  const handleFetchFilter = async () => {
+    const data = await fetchFilterPrice(filterPrice)
+    setQuantityProducts(data.totalItems)
+    setProducts(data.items);
+  };
+    
+  useEffect(() => {
+    handleFetchFilter()
+  }, [filterPrice]);
+  
 
   return (
     <ContainerSlidebar>
@@ -22,8 +36,8 @@ export function Slidebar() {
             type="radio"
             id="0"
             name="priceFilter"
-            value="everybody"
-            checked={ filterPrice === "everybody" ? true : false }
+            value="0-1000"
+            checked={ filterPrice === "0-1000" ? true : false }
             onChange={ handleChecked }
           />
           Todos
@@ -34,8 +48,8 @@ export function Slidebar() {
             type="radio"
             id="1"
             name="priceFilter"
-            value="<40"
-            checked={ filterPrice === "<40" ? true : false }
+            value="0-40"
+            checked={ filterPrice === "0-40" ? true : false }
             onChange={ handleChecked }
           />
           Até R$40
@@ -82,8 +96,8 @@ export function Slidebar() {
             type="radio"
             id="5"
             name="priceFilter"
-            value=">500"
-            checked={ filterPrice === ">500" ? true : false }
+            value="500-1000"
+            checked={ filterPrice === "500-1000" ? true : false }
             onChange={ handleChecked }
             />
           Acima de R$500

@@ -5,8 +5,9 @@ import { Product } from "../pages/Product";
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={ <Cataloge /> } />
-      <Route path=":product" element={ <Product /> } />
+      <Route path="/cataloge" element={ <Cataloge /> } />
+      <Route path="/cataloge/:page" element={ <Cataloge /> } />
+      <Route path="product/:product" element={ <Product /> } />
     </Routes>
   );
 }

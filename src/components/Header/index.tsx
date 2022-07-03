@@ -6,17 +6,20 @@ import filterIcon from '../../images/filter.png';
 import searchIcon from '../../images/search.png';
 import menu from '../../images/menu.png';
 import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MyContext } from '../Hooks/Context';
+import { fetchFilterName } from '../../utils/fetchApi';
 
 export function Header() {
   const {
-    setInputFilter,
+    setQuantityProducts,
+    setProducts,
   } = useContext(MyContext);
 
   const [hidden, setHidden] = useState('hidden');
   const [inputValue, setInputValue] = useState('');
   const [filterInputAvailable, setFilterInputAvailable] = useState(false);
+  const [inputFilter, setInputFilter] = useState("");
 
   const handleHidden = () => {
     hidden === 'hidden' ? setHidden('none') : setHidden('hidden');
@@ -27,8 +30,19 @@ export function Header() {
   );
 
   const handleInputFilter = () => {
+    setFilterInputAvailable(false)
     return setInputFilter(inputValue);
   }
+
+  const handleFetch = async () => {
+    const data = await fetchFilterName(inputFilter);
+    setQuantityProducts(data.totalItems);
+    setProducts(data.items);
+  };
+
+  useEffect(() => {
+    handleFetch()
+  }, [inputFilter])
 
   return (
     <ContainerHeader>
@@ -43,7 +57,7 @@ export function Header() {
       <Navbar visibilityNav={ hidden }>
         <ul>
           <li><Link to={''}>Clube</Link></li>
-          <li><Link to={'/'}>Loja</Link></li>
+          <li><Link to={''}>Loja</Link></li>
           <li><Link to={''}>Produtores</Link></li>
           <li><Link to={''}>Ofertas</Link></li>
           <li><Link to={''}>Eventos</Link></li>

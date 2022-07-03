@@ -44,7 +44,7 @@ export const Navbar = styled.nav<MenuHidden>`
   & ul {
     @media (max-width: 960px) {
       display: block;
-      position: fixed;
+      position: absolute;
       padding: 0;
       top: 71px;
       left: 0;
@@ -54,7 +54,6 @@ export const Navbar = styled.nav<MenuHidden>`
       height: 100vh;
       border-radius: 0 5px 5px 0;
       z-index: 3;
-
     };
 
     display: flex;

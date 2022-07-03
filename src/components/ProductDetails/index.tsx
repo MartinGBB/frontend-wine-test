@@ -5,7 +5,8 @@ import {
   ContainerImage,
   ContainerDescriptionProduct,
   SectionProduct,
-  Price,
+  PriceMember,
+  PriceNonMember,
   CommentProduct,
   AddCart
   } from "./styles";
@@ -41,17 +42,17 @@ export function ProductDetails() {
 
           </SectionProduct>
 
-          <Price>
-            <div>
+          <div>
+            <PriceMember>
               <span>R$ </span>
               <span>63</span>
               <span>,67</span>
-            </div>
+            </PriceMember>
 
-            <div>
+            <PriceNonMember>
               <span>NÂO SOCIO R$ 120,95/UN</span>
-            </div>
-          </Price>
+            </PriceNonMember>
+          </div>
 
           <CommentProduct>
             <h1>Comentario do Sommelier</h1>

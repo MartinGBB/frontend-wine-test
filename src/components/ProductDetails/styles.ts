@@ -59,8 +59,27 @@ export const SectionProduct = styled.div`
 
 `;
 
-export const Price = styled.div`
-  
+export const PriceMember = styled.div`
+  font-family: var(--font-family-secondary);
+  font-weight: 700;
+
+  & span {
+    color: #C81A78;
+    font-size: 1.3rem;
+  }
+
+  & span:nth-child(2) {
+    font-size: 2.8rem;
+  }
+`;
+
+export const PriceNonMember = styled.div`
+  & span {
+  color: var(--color-font-price-secoundary);
+  font-family: var(--font-family-secondary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  }
 `;
 
 export const CommentProduct = styled.div`

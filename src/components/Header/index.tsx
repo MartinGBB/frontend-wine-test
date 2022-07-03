@@ -27,6 +27,7 @@ export function Header() {
   );
 
   const handleInputFilter = () => {
+    setFilterInputAvailable(false)
     return setInputFilter(inputValue);
   }
 

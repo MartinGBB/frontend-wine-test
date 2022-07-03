@@ -100,10 +100,33 @@ export const CommentProduct = styled.div`
 export const AddCart = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 20.5rem;
-  height: 3.5rem;
+  /* height: 3.5rem; */
   background-color: var(--color-button);
   border-radius: 4px;
   color: white;
+  font-family: var(--font-family-secondary);
+  font-size: 24px;
+  
+  & button {
+  }
+
+  & div {
+    display: flex;
+
+    & button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 9rem;
+      height: 3.5rem;
+      border: none;
+      color: white;
+      background-color: transparent;
+      font-family: var(--font-family-secondary);
+      font-weight: 700;
+      font-size: 1rem;
+    };
+  };
 `;

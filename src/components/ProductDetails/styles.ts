@@ -109,6 +109,17 @@ export const AddCart = styled.div`
   font-size: 24px;
   
   & button {
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 50%;
+    font-family: var(--font-family-secondary);
+      font-weight: 700;
+      font-size: 1rem;
+  }
+
+  & button:active {
+    font-size: 0.8rem;
   }
 
   & div {

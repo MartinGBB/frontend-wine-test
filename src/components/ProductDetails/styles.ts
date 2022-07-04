@@ -2,12 +2,17 @@ import styled from 'styled-components';
 
 export const ContainerPage = styled.div`
   width: 100%;
+  margin-bottom: 2rem;
   
   & a {
     font-family: var(--font-family-primary);
     font-size: 1.25rem;
     color: #111111;
     text-decoration: none;
+  }
+
+  & a:hover {
+    font-size: 1.27rem;
   }
 `;
 
@@ -124,8 +129,10 @@ export const AddCart = styled.div`
     background-color: transparent;
     border-radius: 50%;
     font-family: var(--font-family-secondary);
-      font-weight: 700;
-      font-size: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 25px;
+    height: 25px;
   }
 
   & button:active {

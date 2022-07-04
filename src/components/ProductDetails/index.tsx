@@ -16,25 +16,6 @@ import {
   AddCart
 } from "./styles";
 
-interface Prod {
-    id: number;
-    image: string;
-    name: string;
-    price: number;
-    discount: number;
-    priceMember: number;
-    priceNonMember: number;
-    type: string;
-    classification: string;
-    size: string;
-    rating: number;
-    avaliations: number;
-    country: string;
-    region: string;
-    flag: string;
-    sommelierComment: string;
-}
-
 export function ProductDetails() {
   const [item, setItem] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -57,14 +38,13 @@ export function ProductDetails() {
   };
   
   const handleFetchProduct = () => {
-    const productSelected = products.filter(({ id }) => id.toString() === productId)[0];
-    setItem(productSelected);
+    const productSelected = products.filter(({ id }) => id.toString() === productId);
+    if (productId) return setItem(productSelected[0]);
   }
-    
-    useEffect(() => {
-      handleFetchProduct()
-    }, [])
-
+  useEffect(() => {
+    handleFetchProduct()
+  }, [])
+  
   return (
     <ContainerPage>
       <span>{' < '}</span>
@@ -86,25 +66,25 @@ export function ProductDetails() {
 
             <h1>{ item.name }</h1>
 
-            <img src={ item.flag } alt={ item.country} />
+            <img src={ item.flag } alt={ item.country } />
             <span>{ item.country }</span>
             <span>{ item.type }</span>
             <span>{ item.classification }</span>
             <span>{ item.volume }</span>
             <span>{ item.rating }</span>
-            <span>{ `(${item.avaliations})` }</span>
+            <span>{ `(${item.avaliations | 0})` }</span>
 
           </SectionProduct>
 
           <div>
             <PriceMember>
               <span>R$ </span>
-              {/* <span>{ splitPrice(item.priceMember).priceInt }</span>
-              <span>,{ splitPrice(item.priceMember).pricePennies }</span> */}
+              <span>{ splitPrice(item.priceMember | 0).priceInt }</span>
+              <span>,{ splitPrice(item.priceMember | 0).pricePennies }</span>
             </PriceMember>
 
             <PriceNonMember>
-              {/* <span>NÂO SOCIO R$ { formatPrice(item.priceNonMember) }/UN</span> */}
+              <span>NÂO SOCIO R$ { formatPrice(item.priceNonMember | 0) }/UN</span>
             </PriceNonMember>
           </div>
 

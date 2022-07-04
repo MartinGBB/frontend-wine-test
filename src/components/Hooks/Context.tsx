@@ -22,6 +22,8 @@ interface ContextState {
   setProducts: (value: string) => void;
   quantityProducts: number;
   setQuantityProducts: (value: number) => void;
+  quantityCart: number;
+  setQuantityCart: (value: number) => void;
 }
 
 

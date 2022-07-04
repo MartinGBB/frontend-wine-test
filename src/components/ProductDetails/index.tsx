@@ -18,13 +18,28 @@ import {
 
 export function ProductDetails() {
   const [item, setItem] = useState([]);
+  const [quantity, setQuantity] = useState(1);
 
+  const { products, setQuantityCart, quantityCart } = useContext(MyContext);
   const { productId } = useParams();
-  const { products } = useContext(MyContext);
+
+  const handleLess = () => {
+    if (quantity === 0) return null;
+    setQuantity(quantity - 1);
+  };
+
+  const handleMore = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleItemToCart = () => {
+    const oldState = quantityCart;
+    setQuantityCart(oldState  + quantity)
+  };
   
   const handleFetchProduct = () => {
-    const productSelected = products.filter(({ id }) => id.toString() === productId);
-    setItem(productSelected[0]);
+    const productSelected = products.filter(({ id }) => id.toString() === productId)[0];
+    setItem(productSelected);
   }
     
     useEffect(() => {
@@ -80,11 +95,11 @@ export function ProductDetails() {
           </CommentProduct>
 
           <AddCart>
-            <button type="button">-</button>
-            <span>1</span>
-            <button type="button">+</button>
+            <button type="button" onClick={ handleLess }>-</button>
+            <span>{ quantity }</span>
+            <button type="button" onClick={ handleMore }>+</button>
             <div>
-              <button type="button">Adicionar</button>
+              <button type="button" onClick={ handleItemToCart }>Adicionar</button>
             </div>
           </AddCart>
         </ContainerDescriptionProduct>

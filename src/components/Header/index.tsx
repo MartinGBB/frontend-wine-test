@@ -3,7 +3,6 @@ import logo from '../../images/logo.png';
 import profileImg from '../../images/profile.png';
 import bag from '../../images/bag.png';
 import filterIcon from '../../images/filter.png';
-import searchIcon from '../../images/search.png';
 import menu from '../../images/menu.png';
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
@@ -14,6 +13,7 @@ export function Header() {
   const {
     setQuantityProducts,
     setProducts,
+    quantityCart,
   } = useContext(MyContext);
 
   const [hidden, setHidden] = useState('hidden');
@@ -36,7 +36,7 @@ export function Header() {
 
   useEffect(() => {
     handleFetch()
-  }, [inputValue])
+  }, [inputValue, quantityCart])
 
   return (
     <ContainerHeader>
@@ -90,6 +90,7 @@ export function Header() {
         <Cart>
           <Link to={''} />
           <img src={ bag } alt="cart" />
+          <span>{ quantityCart }</span>
         </Cart>
       </ContentIcons>
 

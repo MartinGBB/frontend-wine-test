@@ -3,7 +3,6 @@ import logo from '../../images/logo.png';
 import profileImg from '../../images/profile.png';
 import bag from '../../images/bag.png';
 import filterIcon from '../../images/filter.png';
-import searchIcon from '../../images/search.png';
 import menu from '../../images/menu.png';
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
@@ -14,12 +13,12 @@ export function Header() {
   const {
     setQuantityProducts,
     setProducts,
+    quantityCart,
   } = useContext(MyContext);
 
   const [hidden, setHidden] = useState('hidden');
   const [inputValue, setInputValue] = useState('');
   const [filterInputAvailable, setFilterInputAvailable] = useState(false);
-  const [inputFilter, setInputFilter] = useState("");
 
   const handleHidden = () => {
     hidden === 'hidden' ? setHidden('none') : setHidden('hidden');
@@ -29,20 +28,15 @@ export function Header() {
     !filterInputAvailable ? setFilterInputAvailable(true) : setFilterInputAvailable(false)
   );
 
-  const handleInputFilter = () => {
-    setFilterInputAvailable(false)
-    return setInputFilter(inputValue);
-  }
-
   const handleFetch = async () => {
-    const data = await fetchFilterName(inputFilter);
+    const data = await fetchFilterName(inputValue);
     setQuantityProducts(data.totalItems);
     setProducts(data.items);
   };
 
   useEffect(() => {
     handleFetch()
-  }, [inputFilter])
+  }, [inputValue, quantityCart])
 
   return (
     <ContainerHeader>
@@ -77,12 +71,6 @@ export function Header() {
                 placeholder="Busque seu produto aqui"
                 onChange={ ({ target: {value} }) => setInputValue(value) }
               />
-              <button
-                type="button"
-                onClick={ () => handleInputFilter() }
-                >
-                <img className="search" src={ searchIcon } alt="buscar" />
-              </button>
             </div>
           }
           
@@ -102,6 +90,7 @@ export function Header() {
         <Cart>
           <Link to={''} />
           <img src={ bag } alt="cart" />
+          <span>{ quantityCart }</span>
         </Cart>
       </ContentIcons>
 

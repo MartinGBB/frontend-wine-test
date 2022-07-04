@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchAllProducts } from "../../utils/fetchApi";
-import { formatPrice } from "../../utils/formatDataApi";
+import { formatPrice } from "../../utils/formatPrice";
 import { splitPrice } from "../../utils/splitPrice";
 import { Cards } from "../Cards";
 import { MyContext } from "../Hooks/Context";
@@ -48,6 +48,7 @@ export function CardList() {
           return (
             <Cards 
               key={ product.id }
+              id={ product.id }
               image={ product.image }
               name={ product.name }
               price={ formatPrice(product.price) }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { MyContext } from "./Context";
 
 interface ChildrenContext {
@@ -8,13 +7,16 @@ interface ChildrenContext {
 
 const Provider = ({ children }: ChildrenContext) => {
   const [products, setProducts] = useState([]);
+  const [quantityCart, setQuantityCart] = useState(0);
   const [quantityProducts, setQuantityProducts] = useState('');
 
   const contextValue = {
     products,
     setProducts,
     quantityProducts,
-    setQuantityProducts
+    setQuantityProducts,
+    quantityCart,
+    setQuantityCart,
   };
 
   return (

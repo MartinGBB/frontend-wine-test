@@ -112,7 +112,7 @@ export const Filter = styled.div`
   }
 
   & div {
-    position: fixed;
+    position: absolute;
     top: 89px;
     left: 0;
     right: 0;
@@ -127,7 +127,7 @@ export const Filter = styled.div`
     border-radius: 5px;
     padding: 8px;
     margin: 8px 8px;
-    width: 80vw;
+    width: 83vw;
   }
 
   & input:focus {
@@ -165,4 +165,28 @@ export const Cart = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  & img {
+    z-index: 2;
+    position: absolute;
+  }
+
+  & span {
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    top: 19px;
+    left: 37px;
+    width: 20px;
+    height: 20px;
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-family-secondary);
+    color: #4FBFA5;
+  }
 `;

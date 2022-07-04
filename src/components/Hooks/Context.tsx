@@ -1,8 +1,6 @@
 import { createContext } from "react";
 
 interface ContextState {
-  inputFilter: string | undefined;
-  setInputFilter: (value: string) => void;
   products: {
     id: number;
     image: string;
@@ -24,6 +22,8 @@ interface ContextState {
   setProducts: (value: string) => void;
   quantityProducts: number;
   setQuantityProducts: (value: number) => void;
+  quantityCart: number;
+  setQuantityCart: (value: number) => void;
 }
 
 

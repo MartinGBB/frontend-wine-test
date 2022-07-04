@@ -31,19 +31,22 @@ Abra um terminal no seu computador e utilize os comandos a baixo na ordem que s�
 Abra seu navegador e digite o seguinte endereço:
 - `http://localhost:3000/`
 
-Na pagina inicial podera fazer busqueda por nome e na slidebar podera filtrar por preço.
+##
+
+ ### Na pagina inicial podera fazer busqueda por nome e na slidebar podera filtrar por preço.
 
 ![captura](capturas/captura-app.png)
 
-Na versão `Mobile`
-
-![captura](capturas/captura-app-mobile.png)
-
-Pagina de `Productos`
+### Pagina de `Produtos`
 
 ![captura](capturas/captura-app-product.png)
 
+### Versão `Mobile`
 
+![captura](capturas/captura-app-mobile.png)
+
+
+##
 
 ## Contato
 

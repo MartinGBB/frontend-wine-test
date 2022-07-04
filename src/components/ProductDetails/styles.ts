@@ -40,7 +40,7 @@ export const SectionProduct = styled.div`
       font-weight: 400;
       color: var(--color-font-price-secoundary);
       font-size: 0.875rem;
-      margin-right: 0.5rem;
+      margin-right: 0.2rem;
     };
     
     & span:nth-child(1), span:nth-child(3) {

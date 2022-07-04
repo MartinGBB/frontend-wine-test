@@ -63,6 +63,10 @@ export const SectionProduct = styled.div`
       color: var(--color-font-header);
     };
 
+    & img {
+      width: 1rem;
+      margin-right: 5px;
+    }
 `;
 
 export const PriceMember = styled.div`

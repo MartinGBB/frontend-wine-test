@@ -16,6 +16,25 @@ import {
   AddCart
 } from "./styles";
 
+interface Prod {
+    id: number;
+    image: string;
+    name: string;
+    price: number;
+    discount: number;
+    priceMember: number;
+    priceNonMember: number;
+    type: string;
+    classification: string;
+    size: string;
+    rating: number;
+    avaliations: number;
+    country: string;
+    region: string;
+    flag: string;
+    sommelierComment: string;
+}
+
 export function ProductDetails() {
   const [item, setItem] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -67,7 +86,7 @@ export function ProductDetails() {
 
             <h1>{ item.name }</h1>
 
-            <img src='' alt="" />
+            <img src={ item.flag } alt={ item.country} />
             <span>{ item.country }</span>
             <span>{ item.type }</span>
             <span>{ item.classification }</span>
